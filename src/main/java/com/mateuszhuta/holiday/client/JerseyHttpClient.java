@@ -17,7 +17,7 @@ public class JerseyHttpClient {
         try {
             return buildJerseyHttpClient();
         } catch (NoSuchAlgorithmException | KeyManagementException e) {
-            throw new RuntimeException("Unable to build Jersey client client!");
+            throw new RuntimeException("Unable to build Jersey http client!");
         }
     }
 
