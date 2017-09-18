@@ -26,12 +26,12 @@ public class HolidayApiClient {
 
     public String retrieveHolidayDataInCsvFormat(String country, String year) {
         Response response = httpClient.getClient().target(HOLIDAYS_API_URL)
-                .queryParam(KEY_PARAM, holidayInfoAppConfiguration.getLiveApiKey())
-                .queryParam(COUNTRY_PARAM, country)
-                .queryParam(YEAR_PARAM, year)
-                .queryParam(FORMAT_PARAM, RESPONSE_FORMAT)
-                .request(MediaType.APPLICATION_JSON_TYPE)
-                .get();
+            .queryParam(KEY_PARAM, holidayInfoAppConfiguration.getLiveApiKey())
+            .queryParam(COUNTRY_PARAM, country)
+            .queryParam(YEAR_PARAM, year)
+            .queryParam(FORMAT_PARAM, RESPONSE_FORMAT)
+            .request(MediaType.APPLICATION_JSON_TYPE)
+            .get();
 
         if (response.getStatus() != OK_HTTP_STATUS) {
             throw new IllegalStateException("Something went wrong!");

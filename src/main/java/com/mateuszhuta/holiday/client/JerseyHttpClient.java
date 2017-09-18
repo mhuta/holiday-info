@@ -25,9 +25,9 @@ public class JerseyHttpClient {
         SSLContext ctx = SSLContext.getInstance("SSL");
         ctx.init(null, buildCerts(), new SecureRandom());
         return ClientBuilder.newBuilder()
-                .hostnameVerifier((s, sslSession) -> true)
-                .sslContext(ctx)
-                .build();
+            .hostnameVerifier((s, sslSession) -> true)
+            .sslContext(ctx)
+            .build();
     }
 
     private static TrustManager[] buildCerts() {
