@@ -1,4 +1,4 @@
-package com.mateuszhuta.holiday.http;
+package com.mateuszhuta.holiday.client;
 
 import com.mateuszhuta.holiday.HolidayInfoAppConfiguration;
 

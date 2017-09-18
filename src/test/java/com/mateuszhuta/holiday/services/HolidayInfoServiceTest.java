@@ -1,7 +1,8 @@
 package com.mateuszhuta.holiday.services;
 
-import com.mateuszhuta.holiday.http.HolidayApiClient;
-import com.mateuszhuta.holiday.models.HolidayInfo;
+import com.mateuszhuta.holiday.client.HolidayApiClient;
+import com.mateuszhuta.holiday.api.HolidayInfo;
+import com.mateuszhuta.holiday.resources.services.HolidayInfoService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -70,7 +71,7 @@ public class HolidayInfoServiceTest {
         when(holidayApiClient.retrieveHolidayDataInCsvFormat("PL", "2015")).thenReturn(CSV_HEADER + plHoliday + CSV_DELIMITER + commonDate);
         when(holidayApiClient.retrieveHolidayDataInCsvFormat("US", "2015")).thenReturn(CSV_HEADER + usHoliday + CSV_DELIMITER + commonDate);
 
-        Optional<HolidayInfo> returned = holidayInfoService.findNextCommonHoliday("2017-01-01", "PL", "US");
+        Optional<HolidayInfo> returned = holidayInfoService.findNextCommonHoliday("2016-01-01", "PL", "US");
         assertTrue(!returned.isPresent());
     }
 

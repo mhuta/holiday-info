@@ -1,10 +1,10 @@
 package com.mateuszhuta.holiday;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.sun.istack.internal.NotNull;
 import io.dropwizard.Configuration;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 public class HolidayInfoAppConfiguration extends Configuration {
     @Valid

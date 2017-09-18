@@ -1,4 +1,4 @@
-package com.mateuszhuta.holiday.http;
+package com.mateuszhuta.holiday.client;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
@@ -17,7 +17,7 @@ public class JerseyHttpClient {
         try {
             return buildJerseyHttpClient();
         } catch (NoSuchAlgorithmException | KeyManagementException e) {
-            throw new RuntimeException("Unable to build Jersey http client!");
+            throw new RuntimeException("Unable to build Jersey client client!");
         }
     }
 

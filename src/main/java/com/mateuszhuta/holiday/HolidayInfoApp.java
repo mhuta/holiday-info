@@ -1,8 +1,8 @@
 package com.mateuszhuta.holiday;
 
-import com.mateuszhuta.holiday.http.HolidayApiClient;
-import com.mateuszhuta.holiday.http.JerseyHttpClient;
-import com.mateuszhuta.holiday.services.HolidayInfoService;
+import com.mateuszhuta.holiday.client.HolidayApiClient;
+import com.mateuszhuta.holiday.client.JerseyHttpClient;
+import com.mateuszhuta.holiday.resources.services.HolidayInfoService;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Environment;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;

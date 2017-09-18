@@ -1,9 +1,9 @@
-package com.mateuszhuta.holiday.services;
+package com.mateuszhuta.holiday.resources.services;
 
 import com.google.common.collect.MultimapBuilder;
 import com.google.common.collect.SetMultimap;
-import com.mateuszhuta.holiday.http.HolidayApiClient;
-import com.mateuszhuta.holiday.models.HolidayInfo;
+import com.mateuszhuta.holiday.client.HolidayApiClient;
+import com.mateuszhuta.holiday.api.HolidayInfo;
 
 import javax.inject.Inject;
 import java.time.LocalDate;
@@ -28,17 +28,16 @@ public class HolidayInfoService {
 
     public Optional<HolidayInfo> findNextCommonHoliday(String date, String countryOne, String countryTwo) {
         final LocalDate requestDate = LocalDate.parse(date);
-        Optional<HolidayInfo> holidayInfo = getHolidayInfo(requestDate, countryOne, countryTwo);
+        Optional<HolidayInfo> holidayInfo = getHolidayInfo(requestDate, countryOne, countryTwo, requestDate.getYear());
 
         if (!holidayInfo.isPresent()) {
-            return getHolidayInfo(requestDate, countryOne, countryTwo);
+            return getHolidayInfo(requestDate, countryOne, countryTwo, requestDate.getYear() + 1);
         }
 
         return holidayInfo;
     }
 
-    private Optional<HolidayInfo> getHolidayInfo(LocalDate requestDate, String countryOne, String countryTwo) {
-        final int year = requestDate.getYear();
+    private Optional<HolidayInfo> getHolidayInfo(LocalDate requestDate, String countryOne, String countryTwo, int year) {
         if (year > YEAR_LIMIT) {
             return Optional.empty();
         }

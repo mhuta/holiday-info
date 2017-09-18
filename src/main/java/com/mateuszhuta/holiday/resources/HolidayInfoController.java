@@ -1,8 +1,8 @@
-package com.mateuszhuta.holiday.controllers;
+package com.mateuszhuta.holiday.resources;
 
 import com.google.common.base.Strings;
-import com.mateuszhuta.holiday.models.HolidayInfo;
-import com.mateuszhuta.holiday.services.HolidayInfoService;
+import com.mateuszhuta.holiday.api.HolidayInfo;
+import com.mateuszhuta.holiday.resources.services.HolidayInfoService;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;

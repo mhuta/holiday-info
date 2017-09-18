@@ -1,4 +1,4 @@
-package com.mateuszhuta.holiday.models;
+package com.mateuszhuta.holiday.api;
 
 import java.util.List;
 
